@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고래잇 × 이마트 보물찾기 설문조사 모음</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1E40AF',
+                            lightBlue: '#3B82F6',
+                            emartYellow: '#FFC20E',
+                            emartDark: '#2C2A29',
+                            oceanBg: '#F0F7FF',
+                            cardBorder: '#E2E8F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .card-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-glow:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+        }
+        .custom-gradient {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #2563EB 100%);
+        }
+        .yellow-accent {
+            background-color: #FFC20E;
+            color: #1E293B;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-slate-800 antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md font-bold text-xl">
+                    🐳
+                </div>
+                <div>
+                    <span class="text-xs font-bold tracking-wider text-blue-600 uppercase block">Gorae-it × E-MART</span>
+                    <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">보물찾기 설문조사 센터</h1>
+                </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <!-- 홈 버튼 추가 -->
+                <a href="../index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 transition-colors border border-slate-200/80">
+                    <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 00-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span>홈</span>
+                </a>
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 mr-1.5 animate-pulse"></span>
+                    설문 진행중
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <section class="custom-gradient text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute left-1/3 top-0 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-medium mb-4 border border-white/10">
+                <span>💛</span>
+                <span>소중한 의견으로 더 향상된 서비스를 만듭니다</span>
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">
+                고래잇 × 이마트 보물찾기<br class="sm:hidden" /> 설문조사 모음
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed mb-6">
+                참여해 주신 고객님들의 의견은 보물찾기 이벤트의 개선 및 차기 서비스 준비에 소중하게 반영됩니다. 원하시는 설문 카드를 클릭하면 조사 페이지로 연결됩니다.
+            </p>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-lg">
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-3 text-center">
+                    <div class="text-xs text-slate-300 font-medium">총 설문 수</div>
+                    <div class="text-xl sm:text-2xl font-bold text-white mt-0.5" id="totalCount">6</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-3 text-center">
+                    <div class="text-xs text-slate-300 font-medium">평균 소요 시간</div>
+                    <div class="text-xl sm:text-2xl font-bold text-amber-300 mt-0.5">1~2분</div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-3 text-center">
+                    <div class="text-xs text-slate-300 font-medium">참여 대상</div>
+                    <div class="text-xl sm:text-2xl font-bold text-emerald-300 mt-0.5">전체 고객</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Search and Filter Bar -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+            
+            <!-- Category Filter Buttons -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none" id="categoryFilters">
+                <button onclick="filterCategory('all')" data-cat="all" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors bg-blue-600 text-white whitespace-nowrap shadow-sm">
+                    전체보기
+                </button>
+                <button onclick="filterCategory('satisfaction')" data-cat="satisfaction" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors whitespace-nowrap">
+                    만족도 조사
+                </button>
+                <button onclick="filterCategory('demand')" data-cat="demand" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors whitespace-nowrap">
+                    사전 수요조사
+                </button>
+                <button onclick="filterCategory('kids')" data-cat="kids" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors whitespace-nowrap">
+                    가족/아이
+                </button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="relative w-full md:w-72">
+                <input type="text" id="searchInput" oninput="handleSearch()" placeholder="설문 제목 검색..." class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="surveyCardsGrid">
+            <!-- Cards will be dynamically populated by JS, with initial SSR fallback list -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="noResults" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 my-6">
+            <div class="text-4xl mb-3">🔍</div>
+            <h3 class="text-lg font-bold text-slate-700">검색 결과가 없습니다</h3>
+            <p class="text-slate-500 text-sm mt-1">다른 검색어를 입력하거나 카테고리 필터를 변경해 보세요.</p>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-slate-700">고래잇 (Gorae-it) × E-MART</span>
+                <span>|</span>
+                <span>보물찾기 이벤트 지원 센터</span>
+            </div>
+            <p>© 2026 Gorae-it & E-Mart Treasure Hunt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <span id="toastIcon">✨</span>
+        <span id="toastMsg">링크가 클립보드에 복사되었습니다!</span>
+    </div>
+
+    <script>
+        // Survey data array
+        const surveyData = [
+            {
+                id: 1,
+                title: "[고래잇 X 이마트 보물찾기] 참여 고객 만족도 및 피드백 설문조사",
+                category: "satisfaction",
+                categoryLabel: "만족도 조사",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-200",
+                icon: "📊",
+                estimatedTime: "약 2분",
+                targetAudience: "참여 완료 고객",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSf9KAD8srZMhxJDkiP037oiS7t_nAU0NWQL1qzy55FypQDHBA/viewform",
+                desc: "보물찾기 이벤트에 직접 참여하신 경험과 소중한 피드백을 전달해 주세요."
+            },
+            {
+                id: 2,
+                title: "고래잇 x 이마트 보물찾기 다국어 사전 수요조사",
+                category: "demand",
+                categoryLabel: "사전 수요조사",
+                badgeColor: "bg-blue-100 text-blue-800 border-blue-200",
+                icon: "🌐",
+                estimatedTime: "약 1분",
+                targetAudience: "다국어 지원 희망 고객",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLScQCR75vg1XItA9z5Cjn8rR_dAAVuFAJNq6Y-rkOYdYnRZfDg/viewform",
+                desc: "외국인 방문객 및 다국어 서비스 필요성에 대한 사전 의견을 수렴합니다."
+            },
+            {
+                id: 3,
+                title: "[고래잇 × 이마트] 보물찾기 이벤트 사전 수요조사",
+                category: "demand",
+                categoryLabel: "사전 수요조사",
+                badgeColor: "bg-blue-100 text-blue-800 border-blue-200",
+                icon: "🎯",
+                estimatedTime: "약 1분",
+                targetAudience: "일반 고객 전체",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSe96FTlaGkrRXYBWgg9JhgGmFTrs2_hHQJL13tV2AiJbjBNzQ/viewform",
+                desc: "이마트 보물찾기 이벤트 개최 전 참여 희망 형태 및 기대를 파악합니다."
+            },
+            {
+                id: 4,
+                title: "[고래잇 x 이마트] 보물찾기 이벤트 만족도 조사",
+                category: "satisfaction",
+                categoryLabel: "만족도 조사",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-200",
+                icon: "⭐",
+                estimatedTime: "약 2분",
+                targetAudience: "이벤트 경험 고객",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSeb8Ho0s9cRGlp5TnI9tiPwKN_XSCXA4cUlbJ-Yu9IFYvpreg/viewform",
+                desc: "보물찾기 이벤트 전반에 관한 만족도를 평가해 주시면 개선에 큰 힘이 됩니다."
+            },
+            {
+                id: 5,
+                title: "[고래잇] 주말 장보기 보물찾기 이벤트 사전 수요조사",
+                category: "demand",
+                categoryLabel: "사전 수요조사",
+                badgeColor: "bg-purple-100 text-purple-800 border-purple-200",
+                icon: "🛒",
+                estimatedTime: "약 1분",
+                targetAudience: "주말 방문 장보기 고객",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLScxbb3eofXfCp7mOb7P32C6lvx6tWvfGnntjpA4oIFL3EXE1w/viewform",
+                desc: "주말 장보기 방문객 대상 보물찾기 이벤트 구성에 관한 사전 의견 수렴입니다."
+            },
+            {
+                id: 6,
+                title: "[사전 설문] 아이와 함께하는 이마트 보물찾기 대작전!!! 야~호",
+                category: "kids",
+                categoryLabel: "가족/아이",
+                badgeColor: "bg-amber-100 text-amber-800 border-amber-200",
+                icon: "🎈",
+                estimatedTime: "약 1분",
+                targetAudience: "동반 자녀가 있는 가족",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSfDaQ9e8pocPdhdACR82fbPt__NDaYyFE0fSvJJq_TsAEddWw/viewform",
+                desc: "아이와 함께 즐겁고 안전하게 참여할 수 있는 보물찾기 프로그램 사전 조사입니다."
+            }
+        ];
+
+        let currentCategory = 'all';
+        let currentSearchQuery = '';
+
+        // Function to render survey cards
+        function renderCards() {
+            const grid = document.getElementById('surveyCardsGrid');
+            const noResults = document.getElementById('noResults');
+            grid.innerHTML = '';
+
+            const filteredData = surveyData.filter(item => {
+                const matchesCategory = (currentCategory === 'all') || (item.category === currentCategory);
+                const matchesSearch = item.title.toLowerCase().includes(currentSearchQuery.toLowerCase()) || 
+                                      item.desc.toLowerCase().includes(currentSearchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filteredData.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            filteredData.forEach(survey => {
+                const card = document.createElement('div');
+                card.className = "card-glow bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between relative group cursor-pointer overflow-hidden shadow-sm hover:border-blue-300";
+                
+                // Add event listener to open link on card click (excluding action buttons)
+                card.onclick = (e) => {
+                    if (!e.target.closest('.action-btn')) {
+                        window.open(survey.url, '_blank', 'noopener,noreferrer');
+                    }
+                };
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Header Badges -->
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold border ${survey.badgeColor}">
+                                ${survey.categoryLabel}
+                            </span>
+                            <div class="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span>${survey.estimatedTime}</span>
+                            </div>
+                        </div>
+
+                        <!-- Main Icon & Title -->
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-slate-50 flex-shrink-0 flex items-center justify-center text-xl border border-slate-100 group-hover:scale-110 transition-transform">
+                                ${survey.icon}
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                                ${survey.title}
+                            </h3>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-xs sm:text-sm text-slate-500 line-clamp-2 mb-4 leading-relaxed">
+                            ${survey.desc}
+                        </p>
+                    </div>
+
+                    <div>
+                        <!-- Target Audience -->
+                        <div class="text-xs text-slate-400 mb-4 flex items-center gap-1">
+                            <span class="font-medium text-slate-500">대상:</span>
+                            <span>${survey.targetAudience}</span>
+                        </div>
+
+                        <!-- Footer Actions -->
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+                            <button onclick="copyToClipboard('${survey.url}', event)" class="action-btn text-xs font-medium text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 px-3 py-2 rounded-lg transition-colors flex items-center gap-1.5" title="링크 복사">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                                <span>링크 복사</span>
+                            </button>
+
+                            <a href="${survey.url}" target="_blank" rel="noopener noreferrer" class="action-btn text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-sm transition-all flex items-center gap-1 group-hover:bg-blue-700">
+                                <span>설문 작성하기</span>
+                                <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            document.getElementById('totalCount').innerText = filteredData.length;
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.className = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors bg-blue-600 text-white whitespace-nowrap shadow-sm";
+                } else {
+                    btn.className = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors whitespace-nowrap";
+                }
+            });
+            renderCards();
+        }
+
+        function handleSearch() {
+            currentSearchQuery = document.getElementById('searchInput').value;
+            renderCards();
+        }
+
+        function copyToClipboard(text, event) {
+            if (event) event.stopPropagation();
+            
+            // Standard document execCommand fallback for strict browser sandboxes
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            showToast('설문 링크가 클립보드에 복사되었습니다! 📋');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderCards();
+        };
+    </script>
+</body>
+</html>
